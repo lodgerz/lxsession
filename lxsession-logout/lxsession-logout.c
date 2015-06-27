@@ -194,6 +194,10 @@ static void logout_clicked(GtkButton * button, HandlerContext * handler_context)
         /* Assume we are under openbox */
         g_spawn_command_line_async("openbox --exit", NULL);
     }
+        {
+        /* Assume we are under metacity or marco */
+        g_spawn_command_line_async("pkill -u $USER", NULL);
+    }
     gtk_main_quit();
 }
 
